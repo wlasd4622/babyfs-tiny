@@ -6,13 +6,13 @@ const {
   emptyKey,
   list,
   watch
-} = require('./libs/subCommand.js');
+} = require('../lib/subCommand.js');
 const {
   getKeys
-} = require('./libs/util.js');
+} = require('../lib/util.js');
 const {
   compress
-} = require('./libs/handler.js');
+} = require('../lib/handler.js');
 const tinify = require('tinify');
 
 // 主命令
