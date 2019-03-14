@@ -33,7 +33,7 @@ commander
   .description('把该目录内的所有图片（含子目录）的图片都进行压缩')
   .action(() => {
     // deepCompress();
-    console.log('尚未完成，敬请期待');
+    console.log('尚未完成，敬请期待.');
   });
 
 commander.parse(process.argv);
