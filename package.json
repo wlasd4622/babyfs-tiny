@@ -1,10 +1,14 @@
 {
-  "name": "babyfs-tinify",
+  "name": "babyfs-tiny",
   "version": "0.1.1",
-  "description": "tinify",
+  "description": "tiny",
   "main": "./dist/index.js",
   "bin": {
     "babyfs-tiny": "./bin/start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wlasd4622/babyfs-tiny.git"
   },
   "scripts": {
     "clean": "gulp clean",

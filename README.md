@@ -1,6 +1,6 @@
-# babyfs-tinify
+# babyfs-tiny
 
-> 
+>
 
 ## Build Setup
 
