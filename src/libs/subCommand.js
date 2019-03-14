@@ -1,5 +1,3 @@
-'use strict';
-
 const inquirer = require('inquirer');
 const {
   checkApiKey,
@@ -13,10 +11,10 @@ module.exports.init = () => {
     type: 'input',
     name: 'apiKey',
     message: '请输入api-key：',
-    validate: apiKey => {
+    validate: (apiKey) => {
       // console.log('\n正在检测，请稍候...');
       process.stdout.write('\n正在检测，请稍候...');
-      return new Promise(async resolve => {
+      return new Promise(async (resolve) => {
         const res = await checkApiKey(apiKey);
         resolve(res);
       });
@@ -68,6 +66,8 @@ module.exports.emptyKey = async key => {
   });
 };
 
-module.exports.watch = async _ => {};
+module.exports.watch = async _ => {
+
+};
 
 module.exports.list = list;

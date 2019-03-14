@@ -1,5 +1,3 @@
-'use strict';
-
 const commander = require('commander');
 const {
   init,
@@ -18,13 +16,25 @@ const {
 const tinify = require('tinify');
 
 // 主命令
-commander.version(require('../package').version, '-v, --version').usage('[options]').option('-p, --path <newPath>', '压缩后的图片存放到指定路径（使用相对路径）').option('-a, --add <key>', '添加api-key').option('--delete <key>', '删除指定api-key').option('-l, --list', '显示已储存的api-key').option('-w, --watch', '监控当前目录文件变化').option('--empty', '清空已储存的api-key');
+commander
+  .version(require('../package').version, '-v, --version')
+  .usage('[options]')
+  .option('-p, --path <newPath>', '压缩后的图片存放到指定路径（使用相对路径）')
+  .option('-a, --add <key>', '添加api-key')
+  .option('--delete <key>', '删除指定api-key')
+  .option('-l, --list', '显示已储存的api-key')
+  .option('-w, --watch', '监控当前目录文件变化')
+  .option('--empty', '清空已储存的api-key');
+
 
 // 子命令
-commander.command('deep').description('把该目录内的所有图片（含子目录）的图片都进行压缩').action(() => {
-  // deepCompress();
-  console.log('尚未完成，敬请期待.');
-});
+commander
+  .command('deep')
+  .description('把该目录内的所有图片（含子目录）的图片都进行压缩')
+  .action(() => {
+    // deepCompress();
+    console.log('尚未完成，敬请期待.');
+  });
 
 commander.parse(process.argv);
 

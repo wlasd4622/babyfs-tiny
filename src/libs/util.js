@@ -1,12 +1,10 @@
-'use strict';
-
 const fs = require('fs');
 const path = require('path');
 const tinify = require('tinify');
 const KEY_FILE_PATH = path.join(__dirname, './data/key');
 
 // 睡眠
-const sleep = ms => {
+const sleep = (ms) => {
   return new Promise(function (resolve) {
     setTimeout(() => {
       resolve(true);
@@ -29,7 +27,7 @@ const checkApiKey = async apiKey => {
 };
 // 检查api-key是否存在
 const checkKeyValidate = apiKey => {
-  return new Promise(async resolve => {
+  return new Promise(async (resolve) => {
     tinify.key = apiKey;
     tinify.validate(function (err) {
       if (err) {
@@ -90,7 +88,7 @@ const list = () => {
   if (keys.length === 0) {
     console.log('没有存储api-key');
   } else {
-    keys.forEach(key => {
+    keys.forEach((key) => {
       console.log(key);
     });
   }

@@ -1,5 +1,3 @@
-'use strict';
-
 const tinify = require('tinify');
 const fs = require('fs');
 const path = require('path');
@@ -37,14 +35,14 @@ const compress = (newPath = '') => {
 };
 
 // 生成目录路径
-const mkDir = filePath => {
+const mkDir = (filePath) => {
   if (filePath && dirExists(filePath) === false) {
     fs.mkdirSync(filePath);
   }
 };
 
 // 判断目录是否存在
-const dirExists = filePath => {
+const dirExists = (filePath) => {
   let res = false;
   try {
     res = fs.existsSync(filePath);
@@ -55,20 +53,20 @@ const dirExists = filePath => {
   return res;
 };
 
+
 /**
  * 检查api-key剩余次数是否大于500
  * @param {*} count 本次需要压缩的图片数目
  */
 const checkCompressionCount = (count = 0) => {
-  return 500 - tinify.compressionCount - count >> 0;
+  return (500 - tinify.compressionCount - count) >> 0;
 };
 
 /**
  * 找到可用的api-key
  * @param {*} imageLength 本次需要压缩的图片数目
  */
-const findValidateKey = async imageLength => {
-  // bug高发处
+const findValidateKey = async imageLength => { // bug高发处
   const keys = getKeys();
   for (let i = 0; i < keys.length; i++) {
     await checkApiKey(keys[i]);
@@ -84,12 +82,10 @@ const readDir = () => {
   const filePath = process.cwd();
   const arr = fs.readdirSync(filePath).filter(item => {
     // 这里应该根据二进制流及文件头获取文件类型mime-type，然后读取文件二进制的头信息，获取其真实的文件类型，对与通过后缀名获得的文件类型进行比较。
-    if (/(\.png|\.jpg|\.jpeg)$/.test(item)) {
-      // 求不要出现奇奇怪怪的文件名。。
+    if (/(\.png|\.jpg|\.jpeg)$/.test(item)) { // 求不要出现奇奇怪怪的文件名。。
       const fileInfo = fs.readFileSync(item);
       const info = imageinfo(fileInfo);
-      return (/png|jpg|jpeg/.test(info.mimeType)
-      );
+      return /png|jpg|jpeg/.test(info.mimeType);
     }
     return false;
   });
