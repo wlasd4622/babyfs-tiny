@@ -1,10 +1,10 @@
 {
   "name": "babyfs-tiny",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "tiny",
-  "main": "./dist/index.js",
+  "main": "index.js",
   "bin": {
-    "babyfs-tiny": "./bin/start.js"
+    "babyfs-tiny": "src/index.js"
   },
   "repository": {
     "type": "git",
