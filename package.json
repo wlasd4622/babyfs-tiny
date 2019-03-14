@@ -4,7 +4,7 @@
   "description": "tinify",
   "main": "./dist/index.js",
   "bin": {
-    "babyfs-tinify": "./bin/start.js"
+    "babyfs-tiny": "./bin/start.js"
   },
   "scripts": {
     "clean": "gulp clean",
