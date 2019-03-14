@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const tinify = require('tinify');
-const KEY_FILE_PATH = path.join(__dirname, './data/key');
+const KEY_FILE_PATH = path.join(__dirname, '../../conf/key');
 
 // 睡眠
 const sleep = ms => {
