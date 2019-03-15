@@ -14,6 +14,3 @@ npm run dev
 # build for production
 npm run prod
 ```
-
-
-manifest
