@@ -10,6 +10,12 @@
    "request": "launch",
    "name": "bin/start",
    "program": "${workspaceFolder}/bin/start.js"
-  }
+  },
+  {
+    "type": "node",
+    "request": "launch",
+    "name": "bin/test",
+    "program": "${workspaceFolder}/bin/test.js"
+   }
  ]
 }
