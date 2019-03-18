@@ -1,6 +1,6 @@
 {
   "name": "babyfs-tiny",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "tiny",
   "main": "index.js",
   "bin": {
