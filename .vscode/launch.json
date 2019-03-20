@@ -16,6 +16,12 @@
     "request": "launch",
     "name": "bin/test",
     "program": "${workspaceFolder}/bin/test.js"
+   },
+   {
+    "type": "node",
+    "request": "launch",
+    "name": "t.js",
+    "program": "${workspaceFolder}/t.js"
    }
  ]
 }
